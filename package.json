@@ -8,6 +8,7 @@
     "gatsby": "^2.0.0",
     "gatsby-plugin-netlify": "^2.0.0",
     "gatsby-plugin-netlify-cms": "^3.0.0",
+    "gatsby-plugin-postcss": "^2.1.13",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sass": "^2.0.1",
     "gatsby-plugin-sharp": "^2.0.5",
@@ -24,6 +25,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
+    "sharp": "^0.23.1",
+    "tailwindcss": "^1.1.2",
     "uuid": "^3.2.1"
   },
   "keywords": [
@@ -32,10 +35,11 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "build:style":"tailwind build src/css/global.css -o src/css/tailwind.css",
     "start": "npm run develop",
     "clean": "rimraf .cache public",
     "build": "npm run clean && gatsby build",
-    "develop": "npm run clean && gatsby develop",
+    "develop": "npm run clean && npm run build:style && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"

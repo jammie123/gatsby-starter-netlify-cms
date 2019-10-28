@@ -2,11 +2,11 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import Navbar from '../components/Navbar'
-import './all.sass'
+import '../css/tailwind.css'; 
 
 const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+  <div className="container mx-auto">
+    <Helmet title="Jan Fuxa" />
     <Navbar />
     <div>{children}</div>
   </div>
